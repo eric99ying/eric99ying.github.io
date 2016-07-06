@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/simplex/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Ib5WUYOh/fqe9wT9MDBX+VgUWQuUf8oDH3yuR9Kr+6Y5ejq92KR8LEuCbRiGZpG" crossorigin="anonymous">
+        <script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <title>Carpool Service</title>
+        <meta name="description" content="Carpool Service">
+        <meta name="keywords" content="carpool, traffic, environment">
+        <meta name="author" content="Eric Ying, Jefferey Su, Garrick Su">
+        <style>
+        
+            #map {
+                width: 500px;
+                height: 400px;
+            }
+
+    		body{
+    		
+    			width:100%;
+    			background: linear-gradient(tan,white);
+    		}
+    
+    		#title{
+    			font-size: 30px;
+    			text-align: center;
+    			background: linear-gradient(60deg,gray,lightgray);
+    			width:50%;
+    			margin:auto;
+    			border-radius:20px;
+    		}
+    
+    		#info{
+    			font-size: 16px;
+    			font-family:Arial;
+    			text-align: center;
+    			margin:auto;
+    			background: linear-gradient(60deg,darkgray, lightgray);
+    			width:50%;
+    			height:100px;
+    			border-radius:25px;
+    		}
+    		
+    		#map{
+    		    
+    		    margin:auto;
+    		    width:500px;
+    		   
+    		    
+    		}
+    		
+    		#usernameform{
+    		    
+    		    margin:auto;
+    		    width:200px;
+    		   
+    		}
+    		
+    		#numseatform{
+    		   
+    		    margin:auto;
+    		    width:200px;
+    		}
+    		
+    		#friendform{
+    		    
+    		    margin:auto;
+    		    width:200px;
+    		}
+    		
+    		#friendlist{
+    		   
+                margin:auto;
+    		    width:200px;
+    		    height:150px;
+    		    overflow:auto;
+    		    
+    		}
+    		
+    		#inputcontainer{
+    		    border:10px outset yellowgreen;
+    		    width:250px;
+    		    height:450px;
+    		    margin:auto;
+    		}
+
+            #nearestfriend{
+                margin:auto;
+                width:200px;
+            }
+            
+            #removefriend{
+                margin:auto;
+                width:200px;
+            }
+            
+            #cargif{
+                animation-name: carmove;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                
+            }
+    		
+    		@keyframes carmove {
+    		    
+                from  {margin-left:-20%;}
+                to  {margin-left:100%;}
+            }
+		</style>
+
+    </head>
+    <body>
+        <div id="title"><h1>Carpooling Service</h1></div>
+        
+        <div id="info"><p><br>Enter your username into the database. Then search for the location of your friends!</p></div>
+        
+        <br><br>
+        
+        <div id="inputcontainer">
+            <div id="usernameform">
+                <text>Username: </text>
+                <text id="username-display"></text><br>
+                <input type="text" id="username"></input>
+               
+            </div>
+    
+            <div id=numseatform>
+               
+                <button id="login-button">Login</button><br><br>
+            </div>
+            <div id=friendform>
+                <text>Add Friends: </text><br>
+                <input type="text" id="friend-username"></input>
+                <button id="add-friend-button">Add Friend</button><br><br>
+            </div>
+    
+            <div id="friendlist">
+                <text>Friends List: </text>
+                <ul id="friends-list-view" style="overflow:auto;">
+            </div>
+            
+            <div id=nearestfriend>
+                <button><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Find Nearest Friend!
+            </div>
+            
+            <div id=removefriend>
+                <button><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Remove Friend!
+            </div>
+        
+        </div>
+        <br><br><br><br>
+        </ul>
+        <div id="map"></div>
+        
+        <br><br><br>
+        
+        <div style:"overflow:hidden;background-color:white;">
+            <div id="cargif">
+                <img src="animation_car.png">
+            </div>
+        </div>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+            async defer></script>
+        <script src="app.js"></script>
+    </body>
+</html>
+
