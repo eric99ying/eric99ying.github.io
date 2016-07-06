@@ -4595,7 +4595,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #cccccc;
 }
 .navbar-inverse {
-  background-color: #FFC600;
+  background-color: #0086b3;
   border-color: #93c54b;
 }
 .navbar-inverse .navbar-brand {
@@ -4610,7 +4610,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ffffff;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #6b9430;
+  color: #33cc33;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
